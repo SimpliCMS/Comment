@@ -1,0 +1,25 @@
+{
+    "name": "simplicms/comment",
+    "description": "",
+    "authors": [
+        {
+            "name": "Placeholder",
+            "email": "placeholder"
+        }
+    ],
+    "require": {
+    },
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Comment\\": ""
+        }
+    }
+}
