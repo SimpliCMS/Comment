@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\User\Models\User;
+use Carbon\Carbon;
 
 class Comment extends Model {
 
@@ -33,6 +34,10 @@ class Comment extends Model {
 
     public function replies(): HasMany {
         return $this->hasMany(static::class, 'parent_id');
+    }
+
+    public function timeAgo() {
+        return Carbon::parse($this->created_at)->diffForHumans();
     }
 
 }
