@@ -28,14 +28,14 @@
     </div>
     @endauth
     <div id="comment-container" class="comment">
-        @foreach($comments as $comment)
+        @foreach($comments->sortByDesc('created_at') as $comment)
         @include('comment::partials.comment', ['comment' => $comment])
 
         <div class="col-11 mt-2">
             <h5 style="margin-left: 10%">replies(<span id="reply-count-{{ $comment->id }}">{{ count($comment->replies) }}</span>)</h5>
         </div>
         <div id="reply-container-{{ $comment->id }}">
-            @foreach($comment->replies as $reply)
+            @foreach($comment->replies->sortBy('created_at') as $reply)
             <div id="reply-{{ $reply->id }}" class="reply">
                 @include('comment::partials.reply', ['reply' => $reply])
             </div>
