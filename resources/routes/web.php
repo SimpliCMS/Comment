@@ -12,4 +12,6 @@
  */
 Route::prefix('comment')->group(function () {
     Route::post('/store', 'CommentController@store')->name('comment.add');
+    Route::get('/poll', 'CommentController@pollComments')->name('comment.poll');
+    Route::get('/replies/poll', 'CommentController@pollReplies')->name('comment.replies.poll');
 });

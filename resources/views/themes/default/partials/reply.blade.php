@@ -1,4 +1,5 @@
 <!-- Reply -->
+<div id="reply-{{ $reply->id }}" class="reply">
 <div class="col-11 mt-2">
     <div class="card p-3" style="margin-left: 9%; width: 100%">
         <div class="d-flex justify-content-between align-items-right">
@@ -17,4 +18,5 @@
         </div>
     </div>
 </div>
+        </div>
 <!-- Reply -->

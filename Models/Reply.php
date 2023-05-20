@@ -9,14 +9,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\User\Models\User;
-use Modules\Comment\Models\Reply;
+use Modules\Comment\Models\Comment;
 use Carbon\Carbon;
 
-class Comment extends Model {
+class Reply extends Model {
 
-    use HasFactory;
-
-    protected $guarded = [];
     protected $fillable = [
         'comment',
         'user_id',
@@ -29,12 +26,8 @@ class Comment extends Model {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function parent(): BelongsTo {
-        return $this->belongsTo(Reply::class, 'parent_id', 'id');
-    }
-
-    public function replies() {
-        return $this->hasMany(Reply::class, 'parent_id', 'id');
+    public function comment() {
+        return $this->belongsTo(Comment::class, 'parent_id', 'id');
     }
 
     public function timeAgo() {
