@@ -5,14 +5,12 @@ namespace Modules\Comment\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Comment\Contracts\Reply as ReplyContract;
 use Modules\User\Models\User;
 use Modules\Comment\Models\Comment;
 use Carbon\Carbon;
 
-class Reply extends Model {
+class Reply extends Model implements ReplyContract {
 
     protected $fillable = [
         'comment',
