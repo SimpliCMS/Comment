@@ -3,26 +3,28 @@
 namespace Modules\Comment\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Konekt\Gears\Defaults\SimpleSetting;
-use Konekt\Gears\Facades\Settings;
 
-class CommentSettingsServiceProvider extends ServiceProvider {
-
+class CommentPreferencesServiceProvider extends ServiceProvider
+{
+    
     /**
      * Bootstrap the module services.
      *
      * @return void
      */
-    public function boot() {
+    public function boot()
+    {
         // Your boot logic here
-    }
 
+    }    
+        
     /**
      * Register the service provider.
      *
      * @return void
      */
-    public function register() {
+    public function register()
+    {
         //
     }
 
@@ -31,8 +33,8 @@ class CommentSettingsServiceProvider extends ServiceProvider {
      *
      * @return array
      */
-    public function provides() {
+    public function provides()
+    {
         return [];
     }
-
 }
